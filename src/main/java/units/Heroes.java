@@ -1,6 +1,6 @@
 package units;
 
-public abstract class Heroes {
+public abstract class Heroes implements InGameInterface{
     protected int attack;
     protected int defense;
     protected int damage;
