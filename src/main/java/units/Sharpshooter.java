@@ -1,7 +1,7 @@
 package units;
 
 public class Sharpshooter extends Heroes{
-    int arrow;
+    int arrow, maxArrow;
 
     public Sharpshooter(int attack, int defense, int damage, int health, int speed, int growth, int arrow) {
         super(12, 10, 10, 15, 9, 4);
@@ -20,5 +20,15 @@ public class Sharpshooter extends Heroes{
                 ", speed = " + speed +
                 ", growth = " + growth +
                 '}';
+    }
+
+    @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
+    public void info() {
+
     }
 }

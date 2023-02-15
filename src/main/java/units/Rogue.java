@@ -19,4 +19,14 @@ public class Rogue extends Heroes {
                 ", growth = " + growth +
                 '}';
     }
+
+    @Override
+    public String getInfo() {
+        return null;
+    }
+
+    @Override
+    public void info() {
+
+    }
 }

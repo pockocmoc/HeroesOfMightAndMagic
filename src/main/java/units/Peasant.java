@@ -1,23 +1,38 @@
 package units;
 
-public class Peasant extends Heroes {
+public class Peasant extends Heroes implements InGameInterface {
     boolean arrow;
+    String name;
 
-    public Peasant(int attack, int defense, int damage, int health, int speed, int growth, boolean arrow) {
+    public Peasant(String name, boolean arrow) {
         super(1, 1, 1, 1, 3, 25);
         this.arrow = true;
+        this.name = name;
     }
+
 
     @Override
     public String toString() {
-        return "Peasant {" +
-                "arrow = " + arrow +
-                ", attack = " + attack +
-                ", defense = " + defense +
-                ", damage = " + damage +
-                ", health = " + health +
-                ", speed = " + speed +
-                ", growth = " + growth +
+        return "Peasant{" +
+                "arrow=" + arrow +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", damage=" + damage +
+                ", health=" + health +
+                ", speed=" + speed +
+                ", growth=" + growth +
                 '}';
+    }
+
+
+    @Override
+    public String getInfo() {
+        return "Peasant " + name ;
+    }
+
+    @Override
+    public void info() {
+
     }
 }
