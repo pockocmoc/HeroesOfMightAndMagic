@@ -1,13 +1,11 @@
 package units;
 
-public class Peasant extends Heroes implements InGameInterface {
+public class Peasant extends Heroes {
     boolean arrow;
-    String name;
 
-    public Peasant(String name, boolean arrow) {
-        super(1, 1, 1, 1, 3, 25);
+    public Peasant(String name) {
+        super(name, 1, 1, 1, 1, 3, 25);
         this.arrow = true;
-        this.name = name;
     }
 
 
@@ -25,14 +23,13 @@ public class Peasant extends Heroes implements InGameInterface {
                 '}';
     }
 
-
     @Override
     public String getInfo() {
-        return "Peasant " + name ;
+        return "Peasant " + name;
     }
 
     @Override
-    public void info() {
+    public void step() {
 
     }
 }

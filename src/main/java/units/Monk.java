@@ -1,20 +1,33 @@
 package units;
 
-public class Monk extends Enchanter {
-    public Monk(int attack, int defense, int damage, int health, int speed, int growth, int magicPoint) {
-        super(12, 7, 12, 30, 5, 3, 2);
+public class Monk extends Healers {
+    public Monk(String name) {
+        super(name, 12, 7, 12, 30, 5, 3, 2);
     }
 
     @Override
     public String toString() {
-        return "Monk {" +
-                "healingPoint = " + healingPoint +
-                ", attack = " + attack +
-                ", defense = " + defense +
-                ", damage = " + damage +
-                ", health = " + health +
-                ", speed = " + speed +
-                ", growth = " + growth +
+        return "Monk{" +
+                "restoreHealthPoints=" + restoreHealthPoints +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", damage=" + damage +
+                ", health=" + health +
+                ", speed=" + speed +
+                ", growth=" + growth +
                 '}';
     }
+
+    @Override
+    public String getInfo() {
+        return "Monk " + name;
+    }
+
+    @Override
+    public void step() {
+
+    }
+
 }
+

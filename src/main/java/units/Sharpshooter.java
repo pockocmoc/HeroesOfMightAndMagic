@@ -1,34 +1,37 @@
 package units;
 
-public class Sharpshooter extends Heroes{
+public class Sharpshooter extends Shooter {
     int arrow, maxArrow;
 
-    public Sharpshooter(int attack, int defense, int damage, int health, int speed, int growth, int arrow) {
-        super(12, 10, 10, 15, 9, 4);
-        this.arrow = 32;
+    public Sharpshooter(String name) {
+        super(name, 12, 10, 10, 15, 9, 4, 2, 32);
+        this.arrow = 22;
+        this.maxArrow = 32;
 
     }
 
     @Override
     public String toString() {
-        return "Sharpshooter {" +
-                "arrow = " + arrow +
-                ", attack = " + attack +
-                ", defense = " + defense +
-                ", damage = " + damage +
-                ", health = " + health +
-                ", speed = " + speed +
-                ", growth = " + growth +
+        return "Sharpshooter{" +
+                "arrow=" + arrow +
+                ", maxArrow=" + maxArrow +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", damage=" + damage +
+                ", health=" + health +
+                ", speed=" + speed +
+                ", growth=" + growth +
                 '}';
     }
 
     @Override
     public String getInfo() {
-        return null;
+        return "Sharpshooter " + name;
     }
 
     @Override
-    public void info() {
+    public void step() {
 
     }
 }

@@ -1,6 +1,7 @@
 package units;
 
-public abstract class Heroes implements InGameInterface{
+public abstract class Heroes implements InGameInterface {
+    protected String name;
     protected int attack;
     protected int defense;
     protected int damage;
@@ -8,7 +9,9 @@ public abstract class Heroes implements InGameInterface{
     protected int speed;
     protected int growth;
 
-    public Heroes(int attack, int defense, int damage, int health, int speed, int growth) {
+
+    public Heroes(String name, int attack, int defense, int damage, int health, int speed, int growth) {
+        this.name = name;
         this.attack = attack;
         this.defense = defense;
         this.damage = damage;
@@ -17,15 +20,5 @@ public abstract class Heroes implements InGameInterface{
         this.growth = growth;
     }
 
-    @Override
-    public String toString() {
-        return "Heroes {" +
-                "attack = " + attack +
-                ", defense = " + defense +
-                ", damage = " + damage +
-                ", health = " + health +
-                ", speed = " + speed +
-                ", growth = " + growth +
-                '}';
-    }
 }
+

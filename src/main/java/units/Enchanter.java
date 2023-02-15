@@ -1,34 +1,32 @@
 package units;
 
-public class Enchanter extends Heroes {
-    int healingPoint;
-
-    public Enchanter(int attack, int defense, int damage, int health, int speed, int growth, int healingPoint) {
-        super(17, 12, 14, 30, 9, 2);
-        this.healingPoint = 2;
-
+public class Enchanter extends Healers {
+    public Enchanter(String name) {
+        super(name, 17, 12, 14, 30, 9,
+                2, 3);
     }
 
     @Override
     public String toString() {
-        return "Enchanter {" +
-                "healingPoint = " + healingPoint +
-                ", attack = " + attack +
-                ", defense = " + defense +
-                ", damage = " + damage +
-                ", health = " + health +
-                ", speed = " + speed +
-                ", growth = " + growth +
+        return "Enchanter{" +
+                "restoreHealthPoints=" + restoreHealthPoints +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", damage=" + damage +
+                ", health=" + health +
+                ", speed=" + speed +
+                ", growth=" + growth +
                 '}';
     }
 
     @Override
     public String getInfo() {
-        return null;
+        return "Enchanter " + name;
     }
 
     @Override
-    public void info() {
+    public void step() {
 
     }
 }
