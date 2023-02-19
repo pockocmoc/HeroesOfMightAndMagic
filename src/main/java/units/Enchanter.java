@@ -2,23 +2,10 @@ package units;
 
 public class Enchanter extends Healers {
     public Enchanter(String name) {
-        super(name, 17, 12, 14, 30, 9,
-                2, 3);
+        super(name, 17, 12, -5, -5, 30, 9, 1);
     }
 
-    @Override
-    public String toString() {
-        return "Enchanter{" +
-                "restoreHealthPoints=" + restoreHealthPoints +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
-    }
+
 
     @Override
     public String getInfo() {
@@ -28,5 +15,14 @@ public class Enchanter extends Healers {
     @Override
     public void step() {
 
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
     }
 }

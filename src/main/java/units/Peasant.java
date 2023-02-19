@@ -1,26 +1,11 @@
 package units;
 
 public class Peasant extends Heroes {
-    boolean arrow;
+    protected int deliveryOfArrows;
 
     public Peasant(String name) {
-        super(name, 1, 1, 1, 1, 3, 25);
-        this.arrow = true;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Peasant{" +
-                "arrow=" + arrow +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
+        super(name, 1, 1, 1, 1, 1, 3);
+        this.deliveryOfArrows = 1;
     }
 
     @Override
@@ -32,4 +17,16 @@ public class Peasant extends Heroes {
     public void step() {
 
     }
+
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
+    }
+
+
 }

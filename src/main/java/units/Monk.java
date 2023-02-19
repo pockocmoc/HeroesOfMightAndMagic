@@ -2,22 +2,10 @@ package units;
 
 public class Monk extends Healers {
     public Monk(String name) {
-        super(name, 12, 7, 12, 30, 5, 3, 2);
+        super(name, 12, 7, -4, -4, 30, 5, 1);
     }
 
-    @Override
-    public String toString() {
-        return "Monk{" +
-                "restoreHealthPoints=" + restoreHealthPoints +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
-    }
+
 
     @Override
     public String getInfo() {
@@ -27,6 +15,15 @@ public class Monk extends Healers {
     @Override
     public void step() {
 
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
     }
 
 }

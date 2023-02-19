@@ -1,12 +1,11 @@
 package units;
 
 public abstract class Healers extends Heroes {
-    int restoreHealthPoints;
+    protected int magicPoints;
 
-    public Healers(String name, int attack, int defense, int damage, int health, int speed,
-                   int growth, int restoreHealthPoints) {
-        super(name, attack, defense, damage, health, speed, growth);
-        this.restoreHealthPoints = restoreHealthPoints;
+    public Healers(String name, int attack, int defense,
+                   int minDamage, int maxDamage, int health, int speed, int magicPoints) {
+        super(name, attack, defense, minDamage, maxDamage, health, speed);
+        this.magicPoints = magicPoints;
     }
-
 }

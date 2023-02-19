@@ -1,28 +1,10 @@
 package units;
 
 public class Sharpshooter extends Shooter {
-    int arrow, maxArrow;
+
 
     public Sharpshooter(String name) {
-        super(name, 12, 10, 10, 15, 9, 4, 2, 32);
-        this.arrow = 22;
-        this.maxArrow = 32;
-
-    }
-
-    @Override
-    public String toString() {
-        return "Sharpshooter{" +
-                "arrow=" + arrow +
-                ", maxArrow=" + maxArrow +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
+        super(name, 12, 10, 8, 10, 15, 9, 2, 32);
     }
 
     @Override
@@ -33,5 +15,15 @@ public class Sharpshooter extends Shooter {
     @Override
     public void step() {
 
+    }
+
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
     }
 }

@@ -2,24 +2,9 @@ package units;
 
 public class Crossbowman extends Shooter {
     public Crossbowman(String name) {
-        super(name, 4, 11, 3, 10, 2, 16, 2, 32);
+        super(name, 6, 3, 2, 3, 10, 4, 2, 16);
     }
 
-
-    @Override
-    public String toString() {
-        return "Crossbowman{" +
-                "arrows=" + arrows +
-                ", maxArrows=" + maxArrows +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
-    }
 
     @Override
     public String getInfo() {
@@ -29,5 +14,15 @@ public class Crossbowman extends Shooter {
     @Override
     public void step() {
 
+    }
+
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
     }
 }

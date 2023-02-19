@@ -1,12 +1,14 @@
 package units;
 
 public abstract class Shooter extends Heroes {
-    int arrows, maxArrows;
+    protected int shotsInOneMove;
+    protected int maxArrows;
 
-    public Shooter(String name, int attack, int defense, int damage, int health, int speed, int growth,
-                   int arrows, int maxArrows) {
-        super(name, attack, defense, damage, health, speed, growth);
-        this.arrows = arrows;
+
+    public Shooter(String name, int attack, int defense,
+                   int minDamage, int maxDamage, int health, int speed, int shotsInOneMove, int maxArrows) {
+        super(name, attack, defense, minDamage, maxDamage, health, speed);
+        this.shotsInOneMove = shotsInOneMove;
         this.maxArrows = maxArrows;
     }
 }

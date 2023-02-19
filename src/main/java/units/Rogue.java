@@ -2,22 +2,10 @@ package units;
 
 public class Rogue extends Heroes {
     public Rogue(String name) {
-        super(name, 8, 3, 4, 10, 6, 8);
+        super(name, 8, 3, 2, 4, 10, 6);
     }
 
 
-    @Override
-    public String toString() {
-        return "Rogue{" +
-                "name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + damage +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", growth=" + growth +
-                '}';
-    }
 
     @Override
     public String getInfo() {
@@ -27,5 +15,14 @@ public class Rogue extends Heroes {
     @Override
     public void step() {
 
+    }
+    @Override
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public int getHP() {
+        return health;
     }
 }
