@@ -6,8 +6,9 @@ public abstract class Shooter extends Heroes {
 
 
     public Shooter(String name, int attack, int defense,
-                   int minDamage, int maxDamage, int health, int speed, int shotsInOneMove, int maxArrows) {
-        super(name, attack, defense, minDamage, maxDamage, health, speed);
+                   int minDamage, int maxDamage, int health, int speed, int x, int y,
+                   int shotsInOneMove, int maxArrows) {
+        super(name, attack, defense, minDamage, maxDamage, health, speed, x, y);
         this.shotsInOneMove = shotsInOneMove;
         this.maxArrows = maxArrows;
     }

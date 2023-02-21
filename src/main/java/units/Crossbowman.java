@@ -1,8 +1,8 @@
 package units;
 
 public class Crossbowman extends Shooter {
-    public Crossbowman(String name) {
-        super(name, 6, 3, 2, 3, 10, 4, 2, 16);
+    public Crossbowman(String name, int x, int y) {
+        super(name, 6, 3, 2, 3, 10, 4, x, y, 2, 16);
     }
 
 
@@ -13,7 +13,10 @@ public class Crossbowman extends Shooter {
 
     @Override
     public void step() {
+        if (health > 0 && maxArrows > 0) {
 
+
+        }
     }
 
     @Override

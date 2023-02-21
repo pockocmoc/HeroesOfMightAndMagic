@@ -1,10 +1,9 @@
 package units;
 
 public class Rogue extends Heroes {
-    public Rogue(String name) {
-        super(name, 8, 3, 2, 4, 10, 6);
+    public Rogue(String name, int x, int y) {
+        super(name, 8, 3, 2, 4, 10, 6, x, y);
     }
-
 
 
     @Override
@@ -16,6 +15,7 @@ public class Rogue extends Heroes {
     public void step() {
 
     }
+
     @Override
     public int getSpeed() {
         return speed;

@@ -3,8 +3,8 @@ package units;
 public class Peasant extends Heroes {
     protected int deliveryOfArrows;
 
-    public Peasant(String name) {
-        super(name, 1, 1, 1, 1, 1, 3);
+    public Peasant(String name, int x, int y) {
+        super(name, 1, 1, 1, 1, 1, 3, x, y);
         this.deliveryOfArrows = 1;
     }
 

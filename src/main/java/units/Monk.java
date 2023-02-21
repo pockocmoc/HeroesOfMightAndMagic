@@ -1,8 +1,8 @@
 package units;
 
 public class Monk extends Healers {
-    public Monk(String name) {
-        super(name, 12, 7, -4, -4, 30, 5, 1);
+    public Monk(String name, int x, int y) {
+        super(name, 12, 7, -4, -4, 30, 5, x, y, 1);
     }
 
 

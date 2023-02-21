@@ -3,8 +3,9 @@ package units;
 public class Sharpshooter extends Shooter {
 
 
-    public Sharpshooter(String name) {
-        super(name, 12, 10, 8, 10, 15, 9, 2, 32);
+    public Sharpshooter(String name, int x, int y) {
+        super(name, 12, 10, 8, 10, 15, 9,
+                x, y, 2, 32);
     }
 
     @Override

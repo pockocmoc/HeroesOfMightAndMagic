@@ -1,8 +1,8 @@
 package units;
 
 public class Pikeman extends Heroes {
-    public Pikeman(String name) {
-        super(name, 4, 5, 1, 3, 10, 4);
+    public Pikeman(String name, int x, int y) {
+        super(name, 4, 5, 1, 3, 10, 4, x, y);
     }
 
 
