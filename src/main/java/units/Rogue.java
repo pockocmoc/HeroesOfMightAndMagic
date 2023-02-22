@@ -32,4 +32,22 @@ public class Rogue extends Heroes {
     public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
 
     }
+
+    @Override
+    public String toString() {
+        return "Rogue{" +
+                "vector2D=" + vector2D +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", minDamage=" + minDamage +
+                ", maxDamage=" + maxDamage +
+                ", health=" + health +
+                ", speed=" + speed +
+                '}';
+    }
+    public String getFullInfo() {
+        System.out.println(this);
+        return ("");
+    }
 }

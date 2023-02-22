@@ -44,4 +44,8 @@ public class Crossbowman extends Shooter {
                 ", speed=" + speed +
                 '}';
     }
+    public String getFullInfo() {
+        System.out.println(this);
+        return ("");
+    }
 }

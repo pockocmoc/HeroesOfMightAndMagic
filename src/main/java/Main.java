@@ -16,19 +16,19 @@ public class Main {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             switch (random.nextInt(0, 4)) {
-                case 0 -> brightSide.add(new Peasant(getName(), 0, 0));
-                case 1 -> brightSide.add(new Pikeman(getName(),2, 0));
-                case 2 -> brightSide.add(new Crossbowman(getName(),5, 0));
-                case 3 -> brightSide.add(new Monk(getName(),7, 0));
+                case 0 -> brightSide.add(new Peasant(getName(), i + 1, 0));
+                case 1 -> brightSide.add(new Pikeman(getName(),i + 1, 0));
+                case 2 -> brightSide.add(new Crossbowman(getName(),i + 1, 0));
+                case 3 -> brightSide.add(new Monk(getName(),i + 1, 0));
             }
 
         }
         for (int i = 0; i < 10; i++) {
             switch (random.nextInt(0, 4)) {
-                case 0 -> darkSide.add(new Peasant(getName(),9, 0));
-                case 1 -> darkSide.add(new Rogue(getName(),9, 2));
-                case 2 -> darkSide.add(new Sharpshooter(getName(),9, 5));
-                case 3 -> darkSide.add(new Enchanter(getName(),9, 7));
+                case 0 -> darkSide.add(new Peasant(getName(),9, i + 1));
+                case 1 -> darkSide.add(new Rogue(getName(),9, i + 1));
+                case 2 -> darkSide.add(new Sharpshooter(getName(),9, i + 1));
+                case 3 -> darkSide.add(new Enchanter(getName(),9, i + 1));
             }
 
         }
@@ -46,7 +46,10 @@ public class Main {
         darkSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
         System.out.println("***********************");
         allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-        System.out.println(allHeroes);
+        System.out.println("***********************");
+
+        allHeroes.forEach(n -> System.out.println(n.getFullInfo()));
+        System.out.println(allHeroes.size());
 
 
 

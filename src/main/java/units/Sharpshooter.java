@@ -27,4 +27,24 @@ public class Sharpshooter extends Shooter {
     public int getHP() {
         return health;
     }
+
+    @Override
+    public String toString() {
+        return "Sharpshooter{" +
+                "shotsInOneMove=" + shotsInOneMove +
+                ", maxArrows=" + maxArrows +
+                ", vector2D=" + vector2D +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", minDamage=" + minDamage +
+                ", maxDamage=" + maxDamage +
+                ", health=" + health +
+                ", speed=" + speed +
+                '}';
+    }
+    public String getFullInfo() {
+        System.out.println(this);
+        return ("");
+    }
 }
