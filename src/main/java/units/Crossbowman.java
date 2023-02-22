@@ -28,4 +28,20 @@ public class Crossbowman extends Shooter {
     public int getHP() {
         return health;
     }
+
+    @Override
+    public String toString() {
+        return "Crossbowman{" +
+                "shotsInOneMove=" + shotsInOneMove +
+                ", maxArrows=" + maxArrows +
+                ", vector2D=" + vector2D +
+                ", name='" + name + '\'' +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", minDamage=" + minDamage +
+                ", maxDamage=" + maxDamage +
+                ", health=" + health +
+                ", speed=" + speed +
+                '}';
+    }
 }

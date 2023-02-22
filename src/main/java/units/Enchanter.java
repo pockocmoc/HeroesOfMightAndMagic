@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Enchanter extends Healers {
     public Enchanter(String name, int x, int y) {
         super(name, 17, 12, -5, -5, 30, 9, x, y, 1);
@@ -24,5 +26,10 @@ public class Enchanter extends Healers {
     @Override
     public int getHP() {
         return health;
+    }
+
+    @Override
+    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
+
     }
 }

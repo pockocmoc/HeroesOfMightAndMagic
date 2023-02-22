@@ -8,12 +8,12 @@ public class Vector2D {
         this.x = x;
         this.y = y;
     }
+
     // расчет расстояния
     protected int findHeroes(Vector2D vector2D) {
         int x = vector2D.x;
         int y = vector2D.y;
 
-        double l1 = Math.sqrt((x - this.x) *(x - this.x) + ((y - this.y)*(y - this.y)));
-        return (int) l1;
+        return (int) Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));
     }
 }

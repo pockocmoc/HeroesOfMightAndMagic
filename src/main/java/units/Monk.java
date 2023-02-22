@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Monk extends Healers {
     public Monk(String name, int x, int y) {
         super(name, 12, 7, -4, -4, 30, 5, x, y, 1);
@@ -26,5 +28,9 @@ public class Monk extends Healers {
         return health;
     }
 
+    @Override
+    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
+
+    }
 }
 

@@ -13,13 +13,12 @@ public abstract class Heroes implements InGameInterface {
     protected int speed;
 
     // найти ближайшего
-    protected int findIndex(ArrayList<Heroes> enemy) {
-        for (Heroes h : enemy) {
-            h.vector2D.findHeroes();
-
-        }
-
-    }
+//    protected int findIndex(ArrayList<Heroes> enemy) {
+//        for (Heroes h : enemy) {
+//            h.vector2D.findHeroes();
+//        }
+//
+//    }
 
 
     public Heroes(String name, int attack, int defense, int minDamage, int maxDamage,
@@ -34,5 +33,6 @@ public abstract class Heroes implements InGameInterface {
         this.vector2D = new Vector2D(x, y);
     }
 
+    public abstract void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo);
 }
 

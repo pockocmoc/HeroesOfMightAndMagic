@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Peasant extends Heroes {
     protected int deliveryOfArrows;
 
@@ -29,4 +31,8 @@ public class Peasant extends Heroes {
     }
 
 
+    @Override
+    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
+
+    }
 }

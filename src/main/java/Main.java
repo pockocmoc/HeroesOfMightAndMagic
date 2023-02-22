@@ -1,6 +1,7 @@
 import units.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -9,25 +10,25 @@ public class Main {
 
         System.out.println("***********************");
 
-        List<Heroes> brightSide = new ArrayList<>();
-        List<Heroes> darkSide = new ArrayList<>();
+        ArrayList<Heroes> brightSide = new ArrayList<>();
+        ArrayList<Heroes> darkSide = new ArrayList<>();
         List<Heroes> allHeroes = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             switch (random.nextInt(0, 4)) {
                 case 0 -> brightSide.add(new Peasant(getName(), 0, 0));
-                case 1 -> brightSide.add(new Pikeman(getName(),0, 0));
-                case 2 -> brightSide.add(new Crossbowman(getName(),0, 0));
-                case 3 -> brightSide.add(new Monk(getName(),0, 0));
+                case 1 -> brightSide.add(new Pikeman(getName(),2, 0));
+                case 2 -> brightSide.add(new Crossbowman(getName(),5, 0));
+                case 3 -> brightSide.add(new Monk(getName(),7, 0));
             }
 
         }
         for (int i = 0; i < 10; i++) {
             switch (random.nextInt(0, 4)) {
-                case 0 -> darkSide.add(new Peasant(getName(),0, 0));
-                case 1 -> darkSide.add(new Rogue(getName(),0, 0));
-                case 2 -> darkSide.add(new Sharpshooter(getName(),0, 0));
-                case 3 -> darkSide.add(new Enchanter(getName(),0, 0));
+                case 0 -> darkSide.add(new Peasant(getName(),9, 0));
+                case 1 -> darkSide.add(new Rogue(getName(),9, 2));
+                case 2 -> darkSide.add(new Sharpshooter(getName(),9, 5));
+                case 3 -> darkSide.add(new Enchanter(getName(),9, 7));
             }
 
         }
@@ -45,13 +46,21 @@ public class Main {
         darkSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
         System.out.println("***********************");
         allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
+        System.out.println(allHeroes);
 
-        Crossbowman crossbowman = new Crossbowman(getName(), 1, 1);
-        crossbowman.step();
+
+
+
+
+        System.out.println("___Очередь для хода___");
+        allHeroes.forEach(n -> n.step(brightSide, darkSide));
+
 
     }
 
     private static String getName() {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
     }
+
+
 }

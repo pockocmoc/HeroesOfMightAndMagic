@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public abstract class Shooter extends Heroes {
     protected int shotsInOneMove;
     protected int maxArrows;
@@ -11,5 +13,10 @@ public abstract class Shooter extends Heroes {
         super(name, attack, defense, minDamage, maxDamage, health, speed, x, y);
         this.shotsInOneMove = shotsInOneMove;
         this.maxArrows = maxArrows;
+    }
+
+    @Override
+    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
+
     }
 }
