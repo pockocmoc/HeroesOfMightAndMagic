@@ -9,7 +9,14 @@ public class Vector2D {
         this.y = y;
     }
 
-    // расчет расстояния
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     protected int findHeroes(Vector2D vector2D) {
         int x = vector2D.x;
         int y = vector2D.y;

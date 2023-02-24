@@ -9,5 +9,7 @@ public interface InGameInterface {
     int getSpeed();
 
     int getHP();
+
+
 }
 

@@ -1,13 +1,9 @@
 package units;
 
-import java.util.ArrayList;
-
 public class Pikeman extends Heroes {
     public Pikeman(String name, int x, int y) {
-        super(name, 4, 5, 1, 3, 10, 4, x, y);
+        super(1, name, 4, 5, 1, 3, 10, 4, x, y);
     }
-
-
 
     @Override
     public String getInfo() {
@@ -18,6 +14,7 @@ public class Pikeman extends Heroes {
     public void step() {
 
     }
+
     @Override
     public int getSpeed() {
         return speed;
@@ -28,10 +25,6 @@ public class Pikeman extends Heroes {
         return health;
     }
 
-    @Override
-    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
-
-    }
 
     @Override
     public String toString() {
@@ -46,6 +39,7 @@ public class Pikeman extends Heroes {
                 ", speed=" + speed +
                 '}';
     }
+
     public String getFullInfo() {
         System.out.println(this);
         return ("");

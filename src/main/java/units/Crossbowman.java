@@ -1,8 +1,10 @@
 package units;
 
 public class Crossbowman extends Shooter {
-    public Crossbowman(String name, int x, int y) {
-        super(name, 6, 3, 2, 3, 10, 4, x, y, 2, 16);
+    public Crossbowman(String name, int x,
+                       int y) {
+        super(1, name, 6, 3, 2, 3, 10, 4, x, y,
+                2, 16);
     }
 
 
@@ -11,13 +13,6 @@ public class Crossbowman extends Shooter {
         return "Crossbowman " + name;
     }
 
-    @Override
-    public void step() {
-        if (health > 0 && maxArrows > 0) {
-
-
-        }
-    }
 
     @Override
     public int getSpeed() {
@@ -44,8 +39,45 @@ public class Crossbowman extends Shooter {
                 ", speed=" + speed +
                 '}';
     }
+
     public String getFullInfo() {
         System.out.println(this);
         return ("");
+    }
+
+    public void step() {
+        // Проверяем, что у лучника есть жизнь и стрелы
+        if (health <= 0 || maxArrows <= 0) {
+            return;
+        }
+
+//        // Находим ближайшего противника
+//
+//        Heroes nearestEnemy = findNearestEnemy();
+//
+//        // Если противник найден, атакуем его
+//        if (nearestEnemy != null) {
+//            int damage = getMaxDamage();
+//            nearestEnemy.takeDamage(damage);
+//        } else {
+//            // Если противник не найден, ищем ближайшего крестьянина
+////            Heroes nearestAlly = findNearestAlly(allies);
+//            ArrayList<Heroes> Farmer = null;
+//            Heroes nearestAlly = findNearestEnemy(Farmer);
+//
+//            // Если крестьянин найден, двигаемся к нему
+//            if (nearestAlly != null) {
+//
+//            } else {
+//                // Если крестьянин не найден, уменьшаем количество стрел на 1
+//                arrowsCount--;
+//            }
+//        }
+//    }
+//
+//    private Heroes findNearestEnemy() {
+//    }
+
+
     }
 }

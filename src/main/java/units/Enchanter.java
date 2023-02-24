@@ -1,12 +1,9 @@
 package units;
 
-import java.util.ArrayList;
-
 public class Enchanter extends Healers {
     public Enchanter(String name, int x, int y) {
-        super(name, 17, 12, -5, -5, 30, 9, x, y, 1);
+        super(-1, name, 17, 12, -5, -5, 30, 9, x, y);
     }
-
 
 
     @Override
@@ -18,6 +15,7 @@ public class Enchanter extends Healers {
     public void step() {
 
     }
+
     @Override
     public int getSpeed() {
         return speed;
@@ -28,10 +26,6 @@ public class Enchanter extends Healers {
         return health;
     }
 
-    @Override
-    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
-
-    }
 
     @Override
     public String toString() {
@@ -47,6 +41,7 @@ public class Enchanter extends Healers {
                 ", speed=" + speed +
                 '}';
     }
+
     public String getFullInfo() {
         System.out.println(this);
         return ("");

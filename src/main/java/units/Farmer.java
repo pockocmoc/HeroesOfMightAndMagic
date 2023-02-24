@@ -1,16 +1,18 @@
 package units;
 
-public class Sharpshooter extends Shooter {
-    public Sharpshooter(String name, int x,
-                        int y) {
-        super(-1, name, 12, 10, 8, 10, 15, 9,
-                x, y, 2, 32);
+public class Farmer extends Heroes {
+    protected int deliveryOfArrows;
+
+    public Farmer(String name, int x, int y) {
+        super(1, name, 1, 1, 1, 1, 1, 3, x, y);
+        this.deliveryOfArrows = 1;
+
     }
 
 
     @Override
     public String getInfo() {
-        return "Sharpshooter " + name;
+        return "Peasant " + name;
     }
 
     @Override
@@ -28,11 +30,12 @@ public class Sharpshooter extends Shooter {
         return health;
     }
 
+
+
     @Override
     public String toString() {
-        return "Sharpshooter{" +
-                "shotsInOneMove=" + shotsInOneMove +
-                ", maxArrows=" + maxArrows +
+        return "Peasant{" +
+                "deliveryOfArrows=" + deliveryOfArrows +
                 ", vector2D=" + vector2D +
                 ", name='" + name + '\'' +
                 ", attack=" + attack +

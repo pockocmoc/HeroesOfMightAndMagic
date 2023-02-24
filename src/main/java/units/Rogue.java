@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Rogue extends Heroes {
     public Rogue(String name, int x, int y) {
-        super(name, 8, 3, 2, 4, 10, 6, x, y);
+        super(-1, name, 8, 3, 2, 4, 10, 6, x, y);
     }
 
 
@@ -28,10 +28,6 @@ public class Rogue extends Heroes {
         return health;
     }
 
-    @Override
-    public void step(ArrayList<Heroes> teamOne, ArrayList<Heroes> teamTwo) {
-
-    }
 
     @Override
     public String toString() {
@@ -46,6 +42,7 @@ public class Rogue extends Heroes {
                 ", speed=" + speed +
                 '}';
     }
+
     public String getFullInfo() {
         System.out.println(this);
         return ("");
