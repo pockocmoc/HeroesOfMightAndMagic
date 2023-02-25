@@ -1,65 +1,61 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static java.awt.geom.Point2D.distance;
 
 public abstract class Heroes implements InGameInterface {
-    protected int sideOfTheConflict;
-    protected Vector2D vector2D;
+    protected Vector2D coords;
     protected String name;
     protected int attack;
     protected int defense;
     protected int minDamage;
     protected int maxDamage;
-    protected int health;
+    protected int hp;
+    protected int maxHp;
     protected int speed;
-
-    public static Heroes findNearestEnemy(Heroes currentHeroes, List<Heroes> allHeroes, double targetX, double targetY) {
-        Heroes nearestEnemy = null;
-        double minDistance = Double.MAX_VALUE;
-        for (Heroes hero : allHeroes) {
-            if (hero.getSideOfTheConflict() != currentHeroes.getSideOfTheConflict()) {
-                double distance = distance(hero.vector2D.getX(), hero.vector2D.getY(), targetX, targetY);
-                if (distance < minDistance) {
-                    nearestEnemy = hero;
-                    minDistance = distance;
-                }
-            }
-        }
-        return nearestEnemy;
-    }
+    protected String state;
 
 
-    public static Heroes findNearestEnemy(ArrayList<Heroes> allHeroes) {
-        if (allHeroes.size() < 2) {
-            return null;
-        }
-        Heroes firstHero = allHeroes.get(0);
-        double targetX = firstHero.vector2D.getX();
-        double targetY = firstHero.vector2D.getY();
-        return findNearestEnemy(firstHero, allHeroes.subList(1, allHeroes.size()), targetX, targetY);
-    }
-
-
-    public Heroes(int sideOfTheConflict, String name, int attack, int defense,
-                  int minDamage, int maxDamage, int health, int speed, int x, int y) {
-        this.sideOfTheConflict = sideOfTheConflict;
+    public Heroes(String name, int attack, int defense,
+                  int minDamage, int maxDamage, int hp, int maxHp, int speed, int x, int y) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
-        this.health = health;
+        this.hp = hp;
+        this.maxHp = maxHp;
         this.speed = speed;
-        this.vector2D = new Vector2D(x, y);
+        coords = new Vector2D(x, y);
+        state = "Stand";
 
     }
 
-    public Vector2D getVector2D() {
-        return vector2D;
+    @Override
+    public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
     }
+
+    protected int findNearest(ArrayList<Heroes> team) {
+        double min = Double.MAX_VALUE;
+        int index = 0;
+        for (int i = 0; i < team.size(); i++) {
+            if (min > coords.getDistance(team.get(i).coords)) {
+                index = i;
+                min = coords.getDistance(team.get(i).coords);
+            }
+
+        }
+        return index;
+    }
+
+    protected void getDamage(float damage) {
+        this.hp -= damage;
+        if (hp <= 0) {
+            hp = 0;
+            state = "Die";
+        }
+        if (hp > maxHp) hp = maxHp;
+    }
+
 
     public String getName() {
         return name;
@@ -69,33 +65,12 @@ public abstract class Heroes implements InGameInterface {
         return attack;
     }
 
-    public int getDefense() {
-        return defense;
-    }
-
-    public int getMinDamage() {
-        return minDamage;
-    }
-
-    public int getMaxDamage() {
-        return maxDamage;
-    }
-
-    public int getHealth() {
-        return health;
-    }
 
     @Override
     public int getSpeed() {
         return speed;
     }
 
-    public int getSideOfTheConflict() {
-        return sideOfTheConflict;
-    }
 
-    protected int takeDamage(int damage) {
-        return getHP() - damage;
-    }
 }
 

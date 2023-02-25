@@ -1,16 +1,23 @@
 package units;
 
 public class Sharpshooter extends Shooter {
-    public Sharpshooter(String name, int x,
-                        int y) {
-        super(-1, name, 12, 10, 8, 10, 15, 9,
-                x, y, 2, 32);
+    public Sharpshooter(String name, int x, int y) {
+        super(name, 12, 10, 8, 10, 15, 15, 9, x, y,
+                2, 32);
     }
-
 
     @Override
     public String getInfo() {
-        return "Sharpshooter " + name;
+        String format = "| %-15s | %-10s | %-12s | %-10s | %-10s | %-15s |%n";
+        String type = "Sharpshooter";
+        String name = Sharpshooter.super.name;
+        String attacks = String.format("AT: %d", Sharpshooter.super.attack);
+        String hp = String.format("HP: %d", Sharpshooter.super.hp);
+        String arrows = String.format("Arrows: %d", Sharpshooter.super.maxArrows);
+        double x = Sharpshooter.super.coords.x();
+        double y = Sharpshooter.super.coords.y();
+        String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
+        return String.format(format, type, name, attacks, hp, arrows, coordinates);
     }
 
     @Override
@@ -25,27 +32,13 @@ public class Sharpshooter extends Shooter {
 
     @Override
     public int getHP() {
-        return health;
+        return hp;
     }
 
     @Override
     public String toString() {
-        return "Sharpshooter{" +
-                "shotsInOneMove=" + shotsInOneMove +
-                ", maxArrows=" + maxArrows +
-                ", vector2D=" + vector2D +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", minDamage=" + minDamage +
-                ", maxDamage=" + maxDamage +
-                ", health=" + health +
-                ", speed=" + speed +
-                '}';
+        return "Sharpshooter" + name + " " + hp;
     }
 
-    public String getFullInfo() {
-        System.out.println(this);
-        return ("");
-    }
+
 }

@@ -1,16 +1,21 @@
 package units;
 
-import java.util.ArrayList;
-
 public class Rogue extends Heroes {
     public Rogue(String name, int x, int y) {
-        super(-1, name, 8, 3, 2, 4, 10, 6, x, y);
+        super(name, 8, 3, 2, 4, 10, 10, 6, x, y);
     }
-
 
     @Override
     public String getInfo() {
-        return "Rouge " + name;
+        String format = "| %-15s | %-10s | %-12s | %-10s | %-10s | %-15s |%n";
+        String type = "Rogue";
+        String name = Rogue.super.name;
+        String attacks = String.format("AT: %d", Rogue.super.attack);
+        String hp = String.format("HP: %d", Rogue.super.hp);
+        double x = Rogue.super.coords.x();
+        double y = Rogue.super.coords.y();
+        String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
+        return String.format(format, type, name, attacks, hp, "", coordinates);
     }
 
     @Override
@@ -25,26 +30,13 @@ public class Rogue extends Heroes {
 
     @Override
     public int getHP() {
-        return health;
+        return hp;
     }
 
 
     @Override
     public String toString() {
-        return "Rogue{" +
-                "vector2D=" + vector2D +
-                ", name='" + name + '\'' +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", minDamage=" + minDamage +
-                ", maxDamage=" + maxDamage +
-                ", health=" + health +
-                ", speed=" + speed +
-                '}';
+        return "Rogue" + name + " " + hp;
     }
 
-    public String getFullInfo() {
-        System.out.println(this);
-        return ("");
-    }
 }

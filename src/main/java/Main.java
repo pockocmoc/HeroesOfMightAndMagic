@@ -2,6 +2,7 @@ import units.*;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -42,14 +43,22 @@ public class Main {
         allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
         System.out.println("***********************");
 
-        allHeroes.forEach(n -> System.out.println(n.getFullInfo()));
+        for (Heroes heroes : allHeroes) {
+            if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
+            else heroes.step(darkSide, brightSide);
+        }
 
 
-        Heroes nearestEnemy = Heroes.findNearestEnemy(allHeroes);
-        assert nearestEnemy != null;
-        System.out.println("Ближайшийм противником для " + allHeroes.get(0).getInfo() +
-                ", является " + nearestEnemy.getInfo());
-
+        Scanner scanner = new Scanner(System.in);
+        String stop = "";
+        while (stop.equals("")) {
+            for (Heroes heroes : allHeroes) {
+                if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
+                else heroes.step(darkSide, brightSide);
+            }
+            allHeroes.forEach(n -> System.out.println(n.getInfo()));
+            stop = scanner.nextLine();
+        }
 
 
     }
