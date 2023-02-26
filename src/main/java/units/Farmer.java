@@ -19,7 +19,7 @@ public class Farmer extends Heroes {
         String name = Farmer.super.name;
         String attacks = String.format("AT: %d", Farmer.super.attack);
         String hp = String.format("HP: %d", Farmer.super.hp);
-        String arrows = String.format("Arrows: %d", Farmer.this.deliveryOfArrows);
+        String arrows = String.format("Deliver: %d", Farmer.this.deliveryOfArrows);
         double x = Farmer.super.coords.x();
         double y = Farmer.super.coords.y();
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
@@ -33,9 +33,14 @@ public class Farmer extends Heroes {
 
     @Override
     public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
-        if (!state.equals("Die")) state = "Stand";
+        if (!state.equals("Die")) {
+            state = "Stand";
+
+        }
+
 
     }
+
     @Override
     public int getSpeed() {
         return speed;

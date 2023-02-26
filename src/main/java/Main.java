@@ -7,7 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("***********************");
+        String line = "_________________________________________________________" +
+                "__________________________________";
+
+        System.out.println(line);
 
         ArrayList<Heroes> brightSide = new ArrayList<>();
         ArrayList<Heroes> darkSide = new ArrayList<>();
@@ -33,15 +36,15 @@ public class Main {
         }
         allHeroes.addAll(brightSide);
         allHeroes.addAll(darkSide);
-
         SortByParameter.MySorting(allHeroes);
 
-        brightSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-        System.out.println("***********************");
-        darkSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-        System.out.println("***********************");
-        allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-        System.out.println("***********************");
+//        brightSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
+//        System.out.println("***********************");
+//        darkSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
+//        System.out.println("***********************");
+//        allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
+//        System.out.println("***********************");
+
 
         for (Heroes heroes : allHeroes) {
             if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
@@ -56,7 +59,7 @@ public class Main {
                 if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
                 else heroes.step(darkSide, brightSide);
             }
-            allHeroes.forEach(n -> System.out.println(n.getInfo()));
+            allHeroes.forEach(n -> System.out.println(n.getInfo() + line));
             stop = scanner.nextLine();
         }
 
