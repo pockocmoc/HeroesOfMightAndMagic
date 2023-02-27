@@ -3,7 +3,7 @@ package units;
 public class Sharpshooter extends Shooter {
     public Sharpshooter(String name, int x, int y) {
         super(name, 12, 10, 8, 10, 15, 15, 9, x, y,
-                2, 32);
+                16);
     }
 
     @Override
@@ -14,8 +14,8 @@ public class Sharpshooter extends Shooter {
         String attacks = String.format("AT: %d", Sharpshooter.super.attack);
         String hp = String.format("HP: %d", Sharpshooter.super.hp);
         String arrows = String.format("Arrows: %d", Sharpshooter.super.maxArrows);
-        double x = Sharpshooter.super.coords.x();
-        double y = Sharpshooter.super.coords.y();
+        double x = Sharpshooter.super.coords.posX;
+        double y = Sharpshooter.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, arrows, coordinates);
     }

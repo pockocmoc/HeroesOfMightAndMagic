@@ -1,19 +1,15 @@
 package units;
 
-public record Vector2D(int x, int y) {
+public class Vector2D {
+    protected int posX;
+    protected int posY;
 
-    int getDistance(Vector2D vector2D) {
-        int x = vector2D.x;
-        int y = vector2D.y;
-
-        return (int) Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));
+    public Vector2D(int posX, int posY) {
+        this.posX = posX;
+        this.posY = posY;
     }
 
-    @Override
-    public String toString() {
-        return "Vector2D{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+    protected double getDistance(Vector2D opponent) {
+        return Math.sqrt(Math.pow(posX - opponent.posX, 2) + Math.pow(posY - opponent.posY, 2));
     }
 }

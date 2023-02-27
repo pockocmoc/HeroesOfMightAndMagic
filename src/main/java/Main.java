@@ -5,65 +5,56 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    static final int UNITS = 10;
+
     public static void main(String[] args) {
 
         String line = "_________________________________________________________" +
                 "__________________________________";
-
         System.out.println(line);
-
-        ArrayList<Heroes> brightSide = new ArrayList<>();
-        ArrayList<Heroes> darkSide = new ArrayList<>();
-        ArrayList<Heroes> allHeroes = new ArrayList<>();
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            switch (random.nextInt(0, 4)) {
-                case 0 -> brightSide.add(new Farmer(getName(), i + 1, 0));
-                case 1 -> brightSide.add(new Pikeman(getName(), i + 1, 0));
-                case 2 -> brightSide.add(new Crossbowman(getName(), i + 1, 0));
-                case 3 -> brightSide.add(new Monk(getName(), i + 1, 0));
-            }
-
-        }
-        for (int i = 0; i < 10; i++) {
-            switch (random.nextInt(0, 4)) {
-                case 0 -> darkSide.add(new Peasant(getName(), 9, i + 1));
-                case 1 -> darkSide.add(new Rogue(getName(), 9, i + 1));
-                case 2 -> darkSide.add(new Sharpshooter(getName(), 9, i + 1));
-                case 3 -> darkSide.add(new Enchanter(getName(), 9, i + 1));
-            }
-
-        }
-        allHeroes.addAll(brightSide);
-        allHeroes.addAll(darkSide);
-        SortByParameter.MySorting(allHeroes);
-
-//        brightSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-//        System.out.println("***********************");
-//        darkSide.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-//        System.out.println("***********************");
-//        allHeroes.forEach(n -> System.out.println(n.getInfo() + " скорость, " + n.getSpeed()));
-//        System.out.println("***********************");
-
-
-        for (Heroes heroes : allHeroes) {
-            if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
-            else heroes.step(darkSide, brightSide);
-        }
-
-
+        ArrayList<Heroes> brightTeam = new ArrayList<>();
+        ArrayList<Heroes> darkTeam = new ArrayList<>();
+        ArrayList<Heroes> allHeroesTeam = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
+        createTeam(darkTeam, 0, 1);
+        createTeam(brightTeam, 3, 10);
+        allHeroesTeam.addAll(brightTeam);
+        allHeroesTeam.addAll(darkTeam);
+        SortByParameter.MySorting(allHeroesTeam);
+
+
+        for (Heroes heroes : allHeroesTeam) {
+            if (brightTeam.contains(heroes)) heroes.step(brightTeam, darkTeam);
+            else heroes.step(darkTeam, brightTeam);
+        }
+
+
         String stop = "";
         while (stop.equals("")) {
-            for (Heroes heroes : allHeroes) {
-                if (brightSide.contains(heroes)) heroes.step(brightSide, darkSide);
-                else heroes.step(darkSide, brightSide);
+            for (Heroes heroes : allHeroesTeam) {
+                if (brightTeam.contains(heroes)) heroes.step(brightTeam, darkTeam);
+                else heroes.step(darkTeam, brightTeam);
             }
-            allHeroes.forEach(n -> System.out.println(n.getInfo() + line));
+            allHeroesTeam.forEach(n -> System.out.println(n.getInfo() + line));
             stop = scanner.nextLine();
         }
 
 
+    }
+
+    static void createTeam(ArrayList<Heroes> team, int offset, int posY) {
+        for (int i = 0; i < UNITS; i++) {
+            int random = new Random().nextInt(4) + offset;
+            switch (random) {
+                case (0) -> team.add(new Enchanter(getName(), i + 1, posY));
+                case (1) -> team.add(new Sharpshooter(getName(), i + 1, posY));
+                case (2) -> team.add(new Rogue(getName(), i + 1, posY));
+                case (3) -> team.add(new Peasant(getName(), i + 1, posY));
+                case (4) -> team.add(new Monk(getName(), i + 1, posY));
+                case (5) -> team.add(new Crossbowman(getName(), i + 1, posY));
+                case (6) -> team.add(new Pikeman(getName(), i + 1, posY));
+            }
+        }
     }
 
     private static String getName() {

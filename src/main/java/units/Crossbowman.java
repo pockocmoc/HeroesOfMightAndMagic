@@ -3,7 +3,7 @@ package units;
 public class Crossbowman extends Shooter {
     public Crossbowman(String name, int x, int y) {
         super(name, 6, 3, 2, 3, 10, 10, 4, x, y,
-                1, 16);
+                16);
     }
 
 
@@ -15,8 +15,8 @@ public class Crossbowman extends Shooter {
         String attacks = String.format("AT: %d", Crossbowman.super.attack);
         String hp = String.format("HP: %d", Crossbowman.super.hp);
         String arrows = String.format("Arrows: %d", Crossbowman.super.maxArrows);
-        double x = Crossbowman.super.coords.x();
-        double y = Crossbowman.super.coords.y();
+        double x = Crossbowman.super.coords.posX;
+        double y = Crossbowman.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, arrows, coordinates);
     }

@@ -12,8 +12,8 @@ public class Rogue extends Heroes {
         String name = Rogue.super.name;
         String attacks = String.format("AT: %d", Rogue.super.attack);
         String hp = String.format("HP: %d", Rogue.super.hp);
-        double x = Rogue.super.coords.x();
-        double y = Rogue.super.coords.y();
+        double x = Rogue.super.coords.posX;
+        double y = Rogue.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, "", coordinates);
     }

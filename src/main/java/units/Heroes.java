@@ -47,6 +47,7 @@ public abstract class Heroes implements InGameInterface {
         return index;
     }
 
+
     protected void getDamage(float damage) {
         this.hp -= damage;
         if (hp <= 0) {
@@ -59,10 +60,6 @@ public abstract class Heroes implements InGameInterface {
 
     public String getName() {
         return name;
-    }
-
-    public int getAttack() {
-        return attack;
     }
 
 

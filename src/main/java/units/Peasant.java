@@ -19,8 +19,8 @@ public class Peasant extends Heroes {
         String attacks = String.format("AT: %d", Peasant.super.attack);
         String hp = String.format("HP: %d", Peasant.super.hp);
         String arrows = String.format("Deliver: %d", Peasant.this.deliveryOfArrows);
-        double x = Peasant.super.coords.x();
-        double y = Peasant.super.coords.y();
+        double x = Peasant.super.coords.posX;
+        double y = Peasant.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, arrows, coordinates);
     }

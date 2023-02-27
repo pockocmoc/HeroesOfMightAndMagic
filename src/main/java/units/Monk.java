@@ -15,8 +15,8 @@ public class Monk extends Healers {
         String attacks = String.format("AT: %d", Monk.super.attack);
         String hp = String.format("HP: %d", Monk.super.hp);
         String mp = String.format("MP: %d", Monk.super.magicPoints);
-        double x = Monk.super.coords.x();
-        double y = Monk.super.coords.y();
+        double x = Monk.super.coords.posX;
+        double y = Monk.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, mp, coordinates);
     }

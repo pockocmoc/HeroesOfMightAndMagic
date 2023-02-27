@@ -15,8 +15,8 @@ public class Pikeman extends Heroes {
         String name = Pikeman.super.name;
         String attacks = String.format("AT: %d", Pikeman.super.attack);
         String hp = String.format("HP: %d", Pikeman.super.hp);
-        double x = Pikeman.super.coords.x();
-        double y = Pikeman.super.coords.y();
+        double x = Pikeman.super.coords.posX;
+        double y = Pikeman.super.coords.posY;
         String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
         return String.format(format, type, name, attacks, hp, "", coordinates);
     }
