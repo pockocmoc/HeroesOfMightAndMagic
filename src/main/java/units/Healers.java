@@ -18,7 +18,7 @@ public abstract class Healers extends Heroes {
         double minHp = Double.MAX_VALUE;
         int index = 0;
         for (int i = 0; i < team.size(); i++) {
-            if (minHp > team.get(i).maxHp - team.get(i).hp) {
+            if (minHp > team.get(i).maxHp - team.get(i).hp && !state.equals("Die")) {
                 index = i;
                 minHp = team.get(i).maxHp - team.get(i).hp;
             }

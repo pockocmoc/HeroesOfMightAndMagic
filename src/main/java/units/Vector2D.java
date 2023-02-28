@@ -9,6 +9,10 @@ public class Vector2D {
         this.posY = posY;
     }
 
+    protected boolean isLeft(Vector2D oponent) {
+        return posX < oponent.posX;
+    }
+
     protected double getDistance(Vector2D opponent) {
         return Math.sqrt(Math.pow(posX - opponent.posX, 2) + Math.pow(posY - opponent.posY, 2));
     }

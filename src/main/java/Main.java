@@ -6,15 +6,16 @@ import java.util.Scanner;
 
 public class Main {
     static final int UNITS = 10;
+    public static ArrayList<Heroes> brightTeam = new ArrayList<>();
+    public static ArrayList<Heroes> darkTeam = new ArrayList<>();
+    public static ArrayList<Heroes> allHeroesTeam = new ArrayList<>();
 
     public static void main(String[] args) {
 
         String line = "_________________________________________________________" +
                 "__________________________________";
         System.out.println(line);
-        ArrayList<Heroes> brightTeam = new ArrayList<>();
-        ArrayList<Heroes> darkTeam = new ArrayList<>();
-        ArrayList<Heroes> allHeroesTeam = new ArrayList<>();
+
         Scanner scanner = new Scanner(System.in);
         createTeam(darkTeam, 0, 1);
         createTeam(brightTeam, 3, 10);

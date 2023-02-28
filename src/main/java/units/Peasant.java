@@ -33,7 +33,7 @@ public class Peasant extends Heroes {
 
     @Override
     public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
-        if (!state.equals("Die")) state = "Stand";
+        if (!state.equals("Die") && !state.equals("Busy")) state = "Stand";
 
     }
 

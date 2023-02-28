@@ -38,7 +38,7 @@ public abstract class Heroes implements InGameInterface {
         double min = Double.MAX_VALUE;
         int index = 0;
         for (int i = 0; i < team.size(); i++) {
-            if (min > coords.getDistance(team.get(i).coords)) {
+            if (min > coords.getDistance(team.get(i).coords) && !team.get(i).state.equals("Die")) {
                 index = i;
                 min = coords.getDistance(team.get(i).coords);
             }
