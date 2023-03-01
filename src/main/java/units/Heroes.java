@@ -14,6 +14,9 @@ public abstract class Heroes implements InGameInterface {
     protected int speed;
     protected String state;
 
+    public int[] getCoords() {
+        return new int[]{coords.posX, coords.posY};
+    }
 
     public Heroes(String name, int attack, int defense,
                   int minDamage, int maxDamage, int hp, int maxHp, int speed, int x, int y) {
@@ -58,16 +61,20 @@ public abstract class Heroes implements InGameInterface {
     }
 
 
-    public String getName() {
-        return name;
-    }
-
-
     @Override
     public int getSpeed() {
         return speed;
     }
 
-
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " +
+                name +
+                " H:" + Math.round(hp) +
+                " D:" + defense +
+                " Dmg:" + Math.round(Math.abs((minDamage + maxDamage) / 2)) +
+                " " +
+                state;
+    }
 }
 

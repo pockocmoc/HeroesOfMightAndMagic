@@ -9,8 +9,8 @@ public class Vector2D {
         this.posY = posY;
     }
 
-    protected boolean isLeft(Vector2D oponent) {
-        return posX < oponent.posX;
+    protected boolean isLeft(Vector2D opponent) {
+        return posX < opponent.posX;
     }
 
     protected double getDistance(Vector2D opponent) {

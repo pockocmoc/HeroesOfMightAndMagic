@@ -26,6 +26,7 @@ public abstract class Healers extends Heroes {
         }
         return team.get(index);
     }
+
     @Override
     public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
         if (state.equals("Die") || magicPoints <= 0) return;
@@ -34,5 +35,15 @@ public abstract class Healers extends Heroes {
         magicPoints -= 1;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " +
+                name +
+                " H:" + Math.round(hp) +
+                " D:" + defense +
+                " M:" + maxMP +
+                " " +
+                state;
+    }
 
 }

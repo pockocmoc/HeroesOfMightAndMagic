@@ -31,4 +31,16 @@ public abstract class Shooter extends Heroes {
 
 
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " " +
+                name +
+                " H:" + Math.round(hp) +
+                " D:" + defense +
+                " Dmg:" + Math.round(Math.abs((minDamage + maxDamage) / 2)) +
+                " Shots:" + maxArrows +
+                " " +
+                state;
+    }
 }

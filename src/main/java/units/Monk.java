@@ -37,10 +37,7 @@ public class Monk extends Healers {
     }
 
 
-    @Override
-    public String toString() {
-        return "Monk" + name + " " + hp;
-    }
+
 
 }
 

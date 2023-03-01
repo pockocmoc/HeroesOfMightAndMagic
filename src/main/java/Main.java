@@ -29,15 +29,13 @@ public class Main {
             else heroes.step(darkTeam, brightTeam);
         }
 
-
-        String stop = "";
-        while (stop.equals("")) {
+        while (true) {
+            View.view();
+            scanner.nextLine();
             for (Heroes heroes : allHeroesTeam) {
                 if (brightTeam.contains(heroes)) heroes.step(brightTeam, darkTeam);
                 else heroes.step(darkTeam, brightTeam);
             }
-            allHeroesTeam.forEach(n -> System.out.println(n.getInfo() + line));
-            stop = scanner.nextLine();
         }
 
 

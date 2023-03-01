@@ -37,10 +37,7 @@ public class Enchanter extends Healers {
     }
 
 
-    @Override
-    public String toString() {
-        return "Enchanter" + name + " " + hp;
-    }
+
 
 
 }

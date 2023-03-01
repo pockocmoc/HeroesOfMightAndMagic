@@ -34,9 +34,4 @@ public class Rogue extends Heroes {
     }
 
 
-    @Override
-    public String toString() {
-        return "Rogue" + name + " " + hp;
-    }
-
 }

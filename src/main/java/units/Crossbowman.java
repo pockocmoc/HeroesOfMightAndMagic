@@ -32,12 +32,6 @@ public class Crossbowman extends Shooter {
         return hp;
     }
 
-    @Override
-    public String toString() {
-        return "Crossbowman " + name + " " + hp;
-    }
-
-
 
 
     public void step() {

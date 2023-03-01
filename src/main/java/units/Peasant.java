@@ -33,7 +33,7 @@ public class Peasant extends Heroes {
 
     @Override
     public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
-        if (!state.equals("Die") && !state.equals("Busy")) state = "Stand";
+        if (!state.equals("Die")) state = "Stand";
 
     }
 
@@ -45,12 +45,6 @@ public class Peasant extends Heroes {
     @Override
     public int getHP() {
         return hp;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Peasant" + name + " " + hp;
     }
 
 

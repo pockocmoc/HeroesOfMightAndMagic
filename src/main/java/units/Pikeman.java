@@ -45,9 +45,4 @@ public class Pikeman extends Heroes {
     }
 
 
-    @Override
-    public String toString() {
-        return "Pikeman" + name + " " + hp;
-    }
-
 }

@@ -35,10 +35,7 @@ public class Sharpshooter extends Shooter {
         return hp;
     }
 
-    @Override
-    public String toString() {
-        return "Sharpshooter" + name + " " + hp;
-    }
+
 
 
 }

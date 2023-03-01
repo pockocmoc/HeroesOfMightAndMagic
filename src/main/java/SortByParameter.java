@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SortByParameter {
 
-    static ArrayList<Heroes> MySorting(ArrayList<Heroes> list) {
+    static void MySorting(ArrayList<Heroes> list) {
 
         list.sort((o1, o2) -> {
             if (o2.getSpeed() == o1.getSpeed())
@@ -12,6 +12,5 @@ public class SortByParameter {
             return o2.getSpeed() - o1.getSpeed();
         });
 
-        return list;
     }
 }
