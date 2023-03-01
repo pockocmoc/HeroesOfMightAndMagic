@@ -67,9 +67,9 @@ public class View {
             System.out.print(getChar(1, i));
         }
         System.out.print("|    ");
-        System.out.print(Main.brightTeam.get(0));
-        tabSetter(Main.brightTeam.get(0).toString().length(), l[0]);
-        System.out.println(Main.darkTeam.get(0));
+        System.out.print(Main.darkTeam.get(0));
+        tabSetter(Main.darkTeam.get(0).toString().length(), l[0]);
+        System.out.println(Main.brightTeam.get(0));
         System.out.println(midl10);
 
         for (int i = 2; i < 9; i++) {
@@ -77,18 +77,18 @@ public class View {
                 System.out.print(getChar(i, j));
             }
             System.out.print("|    ");
-            System.out.print(Main.brightTeam.get(i - 1));
-            tabSetter(Main.brightTeam.get(i - 1).toString().length(), l[0]);
-            System.out.println(Main.darkTeam.get(i - 1));
+            System.out.print(Main.darkTeam.get(i - 1));
+            tabSetter(Main.darkTeam.get(i - 1).toString().length(), l[0]);
+            System.out.println(Main.brightTeam.get(i - 1));
             System.out.println(midl10);
         }
         for (int j = 1; j < 11; j++) {
             System.out.print(getChar(10, j));
         }
         System.out.print("|    ");
-        System.out.print(Main.brightTeam.get(9));
-        tabSetter(Main.brightTeam.get(9).toString().length(), l[0]);
-        System.out.println(Main.darkTeam.get(9));
+        System.out.print(Main.darkTeam.get(9));
+        tabSetter(Main.darkTeam.get(9).toString().length(), l[0]);
+        System.out.println(Main.brightTeam.get(9));
         System.out.println(bottom10);
     }
 }

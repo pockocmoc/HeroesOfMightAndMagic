@@ -41,7 +41,7 @@ public abstract class Healers extends Heroes {
                 name +
                 " H:" + Math.round(hp) +
                 " D:" + defense +
-                " M:" + maxMP +
+                " M:" + magicPoints +
                 " " +
                 state;
     }
