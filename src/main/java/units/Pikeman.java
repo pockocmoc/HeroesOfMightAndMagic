@@ -10,7 +10,7 @@ public class Pikeman extends Heroes {
 
     @Override
     public String getInfo() {
-        return getClass().getSimpleName();
+        return getClass().getSimpleName() + " " + state;
     }
 
     @Override

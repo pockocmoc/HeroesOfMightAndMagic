@@ -9,7 +9,7 @@ public class Crossbowman extends Shooter {
 
     @Override
     public String getInfo() {
-        return getClass().getSimpleName();
+        return getClass().getSimpleName() + " " + state;
     }
 
 

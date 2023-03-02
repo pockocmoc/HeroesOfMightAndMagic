@@ -12,8 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String line = "_________________________________________________________" +
-                "__________________________________";
+        String line = "_".repeat(106);
         System.out.println(line);
 
         Scanner scanner = new Scanner(System.in);
@@ -29,14 +28,32 @@ public class Main {
             else heroes.step(darkTeam, brightTeam);
         }
 
-        while (true) {
+        boolean isBrightTeamDead = false;
+        boolean isDarkTeamDead = false;
+
+        while (!isBrightTeamDead && !isDarkTeamDead) {
             View.view();
             scanner.nextLine();
             for (Heroes heroes : allHeroesTeam) {
-                if (brightTeam.contains(heroes)) heroes.step(brightTeam, darkTeam);
-                else heroes.step(darkTeam, brightTeam);
+                if (brightTeam.contains(heroes)) {
+                    heroes.step(brightTeam, darkTeam);
+                    if (heroes.getInfo().contains("Die")) {
+                        isBrightTeamDead = allHeroesTeam.stream().filter(brightTeam::contains)
+                                .allMatch(h -> h.getInfo().contains("Die"));
+                    }
+                } else {
+                    heroes.step(darkTeam, brightTeam);
+                    if (heroes.getInfo().contains("Die")) {
+                        isDarkTeamDead = allHeroesTeam.stream().filter(darkTeam::contains)
+                                .allMatch(h -> h.getInfo().contains("Die"));
+                    }
+                }
             }
         }
+        String winnerTeam = isBrightTeamDead ? "Green side" : "Blue side";
+        System.out.println("The winner is: " + winnerTeam);
+        System.out.println(AnsiColors.ANSI_RED + "Game over!"
+                + AnsiColors.ANSI_RESET);
 
 
     }
