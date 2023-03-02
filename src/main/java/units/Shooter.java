@@ -20,7 +20,7 @@ public abstract class Shooter extends Heroes {
                 (victim.defense - attack) < 0 ? maxDamage : (minDamage + maxDamage) / 2;
         victim.getDamage(damage);
         for (Heroes heroes : team1) {
-            if ((heroes.getInfo().contains("Peasant")) && heroes.state.equals("Stand")) {
+            if ((heroes.getInfo().contains("Farmer")) && heroes.state.equals("Stand")) {
                 heroes.state = "Busy";
                 return;
             }

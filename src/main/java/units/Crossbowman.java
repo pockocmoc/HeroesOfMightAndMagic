@@ -9,16 +9,7 @@ public class Crossbowman extends Shooter {
 
     @Override
     public String getInfo() {
-        String format = "| %-15s | %-10s | %-12s | %-10s | %-10s | %-15s |%n";
-        String type = "Crossbowman";
-        String name = Crossbowman.super.name;
-        String attacks = String.format("AT: %d", Crossbowman.super.attack);
-        String hp = String.format("HP: %d", Crossbowman.super.hp);
-        String arrows = String.format("Arrows: %d", Crossbowman.super.maxArrows);
-        double x = Crossbowman.super.coords.posX;
-        double y = Crossbowman.super.coords.posY;
-        String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
-        return String.format(format, type, name, attacks, hp, arrows, coordinates);
+        return getClass().getSimpleName();
     }
 
 

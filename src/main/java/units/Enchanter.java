@@ -9,16 +9,7 @@ public class Enchanter extends Healers {
 
     @Override
     public String getInfo() {
-        String format = "| %-15s | %-10s | %-12s | %-10s | %-10s | %-15s |%n";
-        String type = "Enchanter";
-        String name = Enchanter.super.name;
-        String attacks = String.format("AT: %d", Enchanter.super.attack);
-        String hp = String.format("HP: %d", Enchanter.super.hp);
-        String mp = String.format("MP: %d", Enchanter.super.magicPoints);
-        double x = Enchanter.super.coords.posX;
-        double y = Enchanter.super.coords.posY;
-        String coordinates = String.format("X,Y(%.1f, %.1f)", x, y);
-        return String.format(format, type, name, attacks, hp, mp, coordinates);
+        return getClass().getSimpleName();
     }
 
     @Override

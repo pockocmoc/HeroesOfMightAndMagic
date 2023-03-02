@@ -48,13 +48,14 @@ public class Main {
                 case (0) -> team.add(new Enchanter(getName(), i + 1, posY));
                 case (1) -> team.add(new Sharpshooter(getName(), i + 1, posY));
                 case (2) -> team.add(new Rogue(getName(), i + 1, posY));
-                case (3) -> team.add(new Peasant(getName(), i + 1, posY));
+                case (3) -> team.add(new Farmer(getName(), i + 1, posY));
                 case (4) -> team.add(new Monk(getName(), i + 1, posY));
                 case (5) -> team.add(new Crossbowman(getName(), i + 1, posY));
                 case (6) -> team.add(new Pikeman(getName(), i + 1, posY));
             }
         }
     }
+
 
     private static String getName() {
         return String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);

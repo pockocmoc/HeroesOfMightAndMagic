@@ -76,5 +76,7 @@ public abstract class Heroes implements InGameInterface {
                 " " +
                 state;
     }
+
+
 }
 
