@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         String line = "_".repeat(106);
+        String lineDown = "_".repeat(100);
         System.out.println(line);
 
         Scanner scanner = new Scanner(System.in);
@@ -51,8 +52,12 @@ public class Main {
             }
         }
         String winnerTeam = isBrightTeamDead ? "Green side" : "Blue side";
-        System.out.println("The winner is: " + winnerTeam);
-        System.out.println(AnsiColors.ANSI_RED + "Game over!"
+        if (winnerTeam.equals("Green side")) {
+            System.out.println(AnsiColors.ANSI_GREEN + "The winner is: " + winnerTeam + AnsiColors.ANSI_RESET);
+        } else
+            System.out.println(AnsiColors.ANSI_BLUE + "The winner is: " + winnerTeam + AnsiColors.ANSI_RESET);
+        System.out.println(lineDown);
+        System.out.println(AnsiColors.ANSI_CYAN + "Game over!"
                 + AnsiColors.ANSI_RESET);
 
 

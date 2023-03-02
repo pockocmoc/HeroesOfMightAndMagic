@@ -51,18 +51,18 @@ public class View {
 
     public static void view() {
         if (step == 1) {
-            System.out.print(AnsiColors.ANSI_RED + "First step" + AnsiColors.ANSI_RESET);
+            System.out.print(AnsiColors.ANSI_CYAN + "First step" + AnsiColors.ANSI_RESET);
         } else {
-            System.out.print(AnsiColors.ANSI_RED + "Step:" + step + AnsiColors.ANSI_RESET);
+            System.out.print(AnsiColors.ANSI_CYAN + "Step:" + step + AnsiColors.ANSI_RESET);
         }
         step++;
         Main.allHeroesTeam.forEach((v) -> l[0] = Math.max(l[0], v.toString().length()));
         System.out.print("_".repeat(l[0] * 2));
         System.out.println("");
         System.out.print(top10 + "    ");
-        System.out.print("Green side");
+        System.out.print(AnsiColors.ANSI_GREEN + "Green side" + AnsiColors.ANSI_RESET);
         System.out.print(" ".repeat(l[0] - 10));
-        System.out.println(":\tBlue side");
+        System.out.println(":" + AnsiColors.ANSI_BLUE + "\tBlue side" + AnsiColors.ANSI_RESET);
         for (int i = 1; i < 11; i++) {
             System.out.print(getChar(1, i));
         }
