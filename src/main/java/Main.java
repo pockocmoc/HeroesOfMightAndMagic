@@ -12,11 +12,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String line = "_".repeat(106);
-        String lineDown = "_".repeat(100);
-        System.out.println(line);
-
         Scanner scanner = new Scanner(System.in);
+        System.out.println(AnsiColors.ANSI_CYAN + "Press enter to start game!" + AnsiColors.ANSI_RESET);
+        scanner.nextLine();
+        String lineDown = "_".repeat(100);
+
         createTeam(darkTeam, 0, 1);
         createTeam(brightTeam, 3, 10);
         allHeroesTeam.addAll(brightTeam);
