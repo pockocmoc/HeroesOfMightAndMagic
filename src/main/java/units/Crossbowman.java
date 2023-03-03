@@ -2,7 +2,7 @@ package units;
 
 public class Crossbowman extends Shooter {
     public Crossbowman(String name, int x, int y) {
-        super(name, 6, 3, 8, 10, 15, 10, 8, x, y, 16);
+        super(name, 6, 3, 3, 4, 15, 10, 8, x, y, 16);
     }
 
 

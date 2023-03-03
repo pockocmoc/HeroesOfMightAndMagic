@@ -2,9 +2,9 @@ package units;
 
 import java.util.ArrayList;
 
-public class Pikeman extends Heroes {
+public class Pikeman extends Warrior {
     public Pikeman(String name, int x, int y) {
-        super(name, 4, 5, 1, 3, 10, 10, 4, x, y);
+        super(name, 4, 5, 1, 3, 100, 100, 4, x, y);
     }
 
 
@@ -18,13 +18,7 @@ public class Pikeman extends Heroes {
 
     }
 
-    @Override
-    public void step(ArrayList<Heroes> team1, ArrayList<Heroes> team2) {
-        if (!state.equals("Die")) {
-            state = "Stand";
 
-        }
-    }
 
     @Override
     public int getSpeed() {

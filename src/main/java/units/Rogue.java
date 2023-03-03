@@ -1,8 +1,10 @@
 package units;
 
-public class Rogue extends Heroes {
+import java.util.ArrayList;
+
+public class Rogue extends Warrior {
     public Rogue(String name, int x, int y) {
-        super(name, 8, 3, 2, 4, 10, 10, 6, x, y);
+        super(name, 8, 3, 2, 4, 100, 100, 6, x, y);
     }
 
     @Override
@@ -14,6 +16,8 @@ public class Rogue extends Heroes {
     public void step() {
 
     }
+
+
 
     @Override
     public int getSpeed() {
