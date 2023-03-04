@@ -9,21 +9,6 @@ public class Vector2D {
         this.posY = posY;
     }
 
-    protected boolean isLeft(Vector2D opponent) {
-        return posX < opponent.posX;
-    }
-
-    protected boolean isRight(Vector2D opponent) {
-        return posX > opponent.posX;
-    }
-
-    protected boolean isUp(Vector2D opponent) {
-        return posY < opponent.posY;
-    }
-
-    protected boolean isDown(Vector2D opponent) {
-        return posY > opponent.posY;
-    }
 
     protected double getDistance(Vector2D opponent) {
         return Math.sqrt(Math.pow(posX - opponent.posX, 2) + Math.pow(posY - opponent.posY, 2));

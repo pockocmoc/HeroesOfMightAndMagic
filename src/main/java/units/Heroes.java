@@ -70,6 +70,8 @@ public abstract class Heroes implements InGameInterface {
     public String toString() {
         return getClass().getSimpleName() + " " +
                 name +
+                " X: " + coords.posX +
+                " Y: " + coords.posY +
                 " H:" + Math.round(hp) +
                 " D:" + defense +
                 " Dmg:" + Math.round(Math.abs((minDamage + maxDamage) / 2)) +

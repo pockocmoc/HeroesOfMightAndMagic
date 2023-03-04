@@ -37,10 +37,10 @@ public abstract class Warrior extends Heroes {
                     coords.posY++;
                 }
             } else {
-                if (coords.chooseWay(victim.coords).posY > 0) {
+                if (coords.chooseWay(victim.coords).posX > 0) {
                     coords.posX--;
                 } else {
-                    coords.posY++;
+                    coords.posX++;
                 }
 
             }

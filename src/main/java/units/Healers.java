@@ -39,6 +39,8 @@ public abstract class Healers extends Heroes {
     public String toString() {
         return getClass().getSimpleName() + " " +
                 name +
+                " X: " + coords.posX +
+                " Y: " + coords.posY +
                 " H:" + Math.round(hp) +
                 " D:" + defense +
                 " M:" + magicPoints +
